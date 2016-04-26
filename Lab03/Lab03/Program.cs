@@ -15,6 +15,8 @@ namespace Lab03
             // 넣는 메서드는 PrintScreen
             ThreadPool.SetMinThreads(10, 10);   // thread pool을 몇개를 쓸지 정하고 쓰는걸 권장. // 이렇게 안하면 0~249를 다 쓴다. // Thread throttling을 피할 수 있게.
             ThreadPool.QueueUserWorkItem(PrintScreen);
+
+            //Thread.Sleep(1);
         }
 
         // Thread pool
