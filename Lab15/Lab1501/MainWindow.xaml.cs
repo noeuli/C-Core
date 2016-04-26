@@ -33,12 +33,14 @@ namespace Lab1501
 
         private void UIProcess()
         {
-            if (textBox.Dispatcher == null)
+            if (textBox.Dispatcher.CheckAccess())
             {
+                // UI Thread
                 textBox.Text = "UI";
             }
             else
             {
+                //textBox.Text = "Working Thread";
                 // 작업 thread인지 아닌지를 확인할 때
                 textBox.Dispatcher.BeginInvoke(new Action(UIProcess));
             }
