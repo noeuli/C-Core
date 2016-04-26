@@ -18,7 +18,7 @@ namespace Lab05_Form
             progressBar1.Maximum = 100;
             progressBar1.Step = 1;
 
-            backgroundWorker1.RunWorkerAsync();
+            w.RunWorkerAsync();
         }
 
         private string Now()
