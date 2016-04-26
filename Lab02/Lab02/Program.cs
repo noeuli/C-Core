@@ -19,8 +19,8 @@ namespace Lab02
             //t2.Start(200);
 
             //// Using lambda expression
-            //Thread t3 = new Thread(() => Print3(123.456));
-            //t3.Start();
+            Thread t3 = new Thread(() => Print3(123.456));
+            t3.Start();
 
             // Background Thread
             // Foreground vs Background
@@ -30,8 +30,9 @@ namespace Lab02
             // Background는 main thread가 죽으면 같이 죽는다.
             Thread t4 = new Thread(new ParameterizedThreadStart(Print4));
             t4.IsBackground = true;
-            t4.Start(200);
+            t4.Start(200.1);
 
+            Thread.Sleep(1);
         }
 
         static void Print()

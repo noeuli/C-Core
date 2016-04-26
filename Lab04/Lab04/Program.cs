@@ -18,6 +18,12 @@ namespace Lab04
             // 정수값 2개를 지정
             IAsyncResult aResult = p.BeginInvoke(100, 200, null, null);
 
+            // Invoke 종료. 실행하고 종료
+            // thread가 완료되기를 대기
+            // return value를 가져와서 result에 저장한다.
+            int result = p.EndInvoke(aResult);
+
+            Console.WriteLine("result=" + result);
         }
 
         // Asynchronous Delegate
