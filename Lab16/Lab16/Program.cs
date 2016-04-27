@@ -17,8 +17,9 @@ namespace Lab16
             int a = 100;
             int b = 200;
             int total = a * b;
+            int total2 = total * 100;
 
-
+            Console.WriteLine("total={0} total2={1}", total, total2);
 
 
         }
