@@ -23,27 +23,46 @@ namespace Lab21
             string dbConnectionString = "";
             using(var con = new SqlConnection(dbConnectionString))
             {
-                // query 문은 2개를 실행함
-                // 첫번째는 입력
-                // 두번째는 출력
-                con.Open();
+                try
+                {
 
-                SqlCommand sqlCmd = new SqlCommand("IO SP", con);
-                sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    // query 문은 2개를 실행함
+                    // 첫번째는 입력
+                    // 두번째는 출력
+                    con.Open();
 
-                // 입력
-                SqlParameter sqlPMInput = new SqlParameter("@in", System.Data.SqlDbType.Int);
-                sqlPMInput.Value = 1;
-                sqlCmd.Parameters.Add(sqlPMInput);
+                    SqlCommand sqlCmd = new SqlCommand("IO SP", con);
+                    sqlCmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // 출력
-                SqlParameter sqlPMOutput = new SqlParameter("@out", System.Data.SqlDbType.Int);
-                sqlPMOutput.Direction = System.Data.ParameterDirection.Output;
-                sqlCmd.Parameters.Add(sqlPMOutput);
+                    // 입력
+                    SqlParameter sqlPMInput = new SqlParameter("@in", System.Data.SqlDbType.Int);
+                    sqlPMInput.Value = 1;
+                    sqlCmd.Parameters.Add(sqlPMInput);
 
-                sqlCmd.ExecuteNonQuery();
+                    // 출력
+                    SqlParameter sqlPMOutput = new SqlParameter("@out", System.Data.SqlDbType.Int);
+                    sqlPMOutput.Direction = System.Data.ParameterDirection.Output;
+                    sqlCmd.Parameters.Add(sqlPMOutput);
 
-                // 이렇게 하면 deadlock이 걸린단다.
+                    sqlCmd.ExecuteNonQuery();
+
+                    // 이렇게 하면 deadlock이 걸린단다.
+                }
+                catch (SqlException sqlEx)
+                {
+                    Console.WriteLine(sqlEx.Message);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    if (con != null)
+                        con.Close();
+
+                    con.Dispose();
+                }
             }
         }
     }
