@@ -30,12 +30,16 @@ namespace Lab01
             // 컴파일러가 결정.. 화면 출력 메서드의 함수 property type
             // ThreadStart delegate 개체를 생성한다. 내부적으로. 컴파일러가.
             Thread t1 = new Thread(PrintScreen);    // create2
+            t1.Name = "Thread1";
 
             // 결국, create1과 create2는 단순한 표현의 차이. 실제 동작은 동일하다.
 
             // 비슷한 동작을 lambda expression으로 표현하면
             // 람다식을 이용한 간략한 방법
-            new Thread(() => PrintScreen()).Start();
+            Thread t2 = new Thread(() => PrintScreen());
+            t2.Name = "Thread2";
+            t2.Start();
+
 
 
             t1.Start();
@@ -47,11 +51,11 @@ namespace Lab01
         // Thread 호출 화면 출력
         void PrintScreen()
         {
-            Console.WriteLine("Print Screen 1");
+            Console.WriteLine("Print Screen 1 (" + Thread.CurrentThread.ManagedThreadId + ") " + Thread.CurrentThread.Name);
 
             Thread.Sleep(3000);
 
-            Console.WriteLine("Print Screen 2");
+            Console.WriteLine("Print Screen 2 (" + Thread.CurrentThread.ManagedThreadId + ") " + Thread.CurrentThread.Name);
         }
     }
 }

@@ -14,16 +14,18 @@ namespace Lab10
             // 정의를 하고 instance 생성만 함. 시작은 하지 않음.
             Task t1 = new Task(new Action(PrintScreen));
             // 생성만 함. 단지 lambda expression을 사용함.
-            Task t2 = new Task(() => { Console.WriteLine("Lambda Task"); });
-
+            Task t2 = new Task(() => { PrintScreen2(); });
+            
             t1.Start();
             Console.WriteLine("1");
-            // Thread.sleep()을 여기에 쓰면, t1 task 안에 있는 thread가 sleep이 된단다.
+            // Thread.sleep()을 여기에 쓰면, t1 task 안에 있는 thread가 sleep이 된단다.(X)
+            // main thread가 sleep 되는게 맞단다. 
             Thread.Sleep(5000);
             Console.WriteLine("2");
             t2.Start();
             Console.WriteLine("3");
-            // Thread.sleep()을 여기에 쓰면, t2 task 안에 있는 thread가 sleep이 된단다.
+            // Thread.sleep()을 여기에 쓰면, t2 task 안에 있는 thread가 sleep이 된단다. (X)
+            // main thread가 sleep 되는게 맞단다.
             Thread.Sleep(5000);
             Console.WriteLine("4");
 
@@ -39,6 +41,11 @@ namespace Lab10
         static void PrintScreen()
         {
             Console.WriteLine("Print Screen");
+        }
+
+        static void PrintScreen2()
+        {
+            Console.WriteLine("Lambda Task");
         }
     }
 }

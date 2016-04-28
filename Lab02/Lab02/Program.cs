@@ -11,15 +11,18 @@ namespace Lab02
         static void Main(string[] args)
         {
             //// Used in Lab1 example
-            //Thread t1 = new Thread(new ThreadStart(Print));
-            //t1.Start();
+            Thread t1 = new Thread(new ThreadStart(Print));
+            t1.Name = "Lab02.Thread1";
+            t1.Start();
 
             //// New thread with arguments
-            //Thread t2 = new Thread(new ParameterizedThreadStart(PrintArg));
-            //t2.Start(200);
+            Thread t2 = new Thread(new ParameterizedThreadStart(PrintArg));
+            t2.Name = "Lab02.Thread2";
+            t2.Start(200);
 
             //// Using lambda expression
             Thread t3 = new Thread(() => Print3(123.456));
+            t3.Name = "Lab02.Thread3";
             t3.Start();
 
             // Background Thread
@@ -30,6 +33,7 @@ namespace Lab02
             // Background는 main thread가 죽으면 같이 죽는다.
             Thread t4 = new Thread(new ParameterizedThreadStart(Print4));
             t4.IsBackground = true;
+            t4.Name = "Lab02.Thread4";
             t4.Start(200.1);
 
             Thread.Sleep(1);
