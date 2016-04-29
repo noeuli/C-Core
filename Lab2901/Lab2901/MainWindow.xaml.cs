@@ -95,7 +95,8 @@ namespace Lab2901
             i.uIntInput[0] = 30;
 
             // 근데 안되네?
-            OnTest4(&i);
+            //OnTest4(&i);
+            OnTest4(ref i);
 
             Trace.WriteLine(i.strInput + ", " + i.intInput + ", " + i.byteArray[0] + ", " + i.uIntInput[0]);
         }

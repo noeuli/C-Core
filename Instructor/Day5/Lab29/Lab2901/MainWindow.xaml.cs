@@ -67,6 +67,7 @@ namespace Lab2901
             // OnTest3
             IntPtr sampleCMd = strOnTest3();
             string print = Marshal.PtrToStringAuto(sampleCMd);
+            MessageBox.Show(print);
 
             // OnTest4
             DLLInput i = new DLLInput();
