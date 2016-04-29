@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2601", "Lab2601\Lab2601.csproj", "{048AB283-97A1-4A56-8986-A05844D1F8D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProCls", "DataProCls\DataProCls.csproj", "{952B7B2F-E632-44CA-9BBD-66A4E86897AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{048AB283-97A1-4A56-8986-A05844D1F8D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048AB283-97A1-4A56-8986-A05844D1F8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048AB283-97A1-4A56-8986-A05844D1F8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048AB283-97A1-4A56-8986-A05844D1F8D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{952B7B2F-E632-44CA-9BBD-66A4E86897AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{952B7B2F-E632-44CA-9BBD-66A4E86897AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{952B7B2F-E632-44CA-9BBD-66A4E86897AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{952B7B2F-E632-44CA-9BBD-66A4E86897AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
